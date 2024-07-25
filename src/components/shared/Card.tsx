@@ -1,23 +1,21 @@
 import React from 'react';
 import { CardProps } from '../../interfaces';
+import './Card.scss';
 
 const Card: React.FC<CardProps> = ({ service, onEdit, onDelete }) => {
 	return (
-		<div className="border rounded-lg shadow-md bg-white flex flex-col h-48 mt-4">
-			<div className="flex-1 flex flex-col p-4">
-				<h2 className="text-xl font-semibold mb-2">{service.name}</h2>
-				<p className="text-gray-700 mb-4 flex-1">{service.description}</p>
+		<div className="card">
+			<div className="card__content">
+				<h2 className="card__title">{service.name}</h2>
+				<p className="card__description">{service.description}</p>
 			</div>
-			<div className="flex gap-4 bg-gray-100 rounded-b-lg p-4">
-				<button
-					onClick={onEdit}
-					className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-				>
+			<div className="card__actions">
+				<button onClick={onEdit} className="card__button card__button--edit">
 					Editar
 				</button>
 				<button
 					onClick={onDelete}
-					className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+					className="card__button card__button--delete"
 				>
 					Eliminar
 				</button>

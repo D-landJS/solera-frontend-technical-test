@@ -3,6 +3,7 @@ import { categories } from '../../utils/const';
 import { Category } from '../../interfaces/category';
 import useForm from '../../hooks/useForm';
 import { FormProps } from '../../interfaces/form';
+import './Form.scss';
 
 const Form: React.FC<FormProps> = ({
 	onSubmit,
@@ -22,11 +23,8 @@ const Form: React.FC<FormProps> = ({
 
 	return (
 		<form className="form" onSubmit={e => handleSubmit(e, onSubmit)}>
-			<div className="m-4">
-				<label
-					htmlFor="name"
-					className="block text-sm font-medium text-gray-700 mb-2"
-				>
+			<div className="form__group">
+				<label htmlFor="name" className="form__label">
 					Nombre
 				</label>
 				<input
@@ -34,44 +32,36 @@ const Form: React.FC<FormProps> = ({
 					type="text"
 					value={formData.name}
 					onChange={handleChange}
-					className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${
-						errors.name ? 'border-red-500' : ''
-					}`}
+					className={`form__input ${errors.name ? 'form__input--error' : ''}`}
 				/>
-				{errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+				{errors.name && <p className="form__error-text">{errors.name}</p>}
 			</div>
-			<div className="m-4">
-				<label
-					htmlFor="description"
-					className="block text-sm font-medium text-gray-700 mb-2"
-				>
+			<div className="form__group">
+				<label htmlFor="description" className="form__label">
 					Descripción
 				</label>
 				<textarea
 					id="description"
 					value={formData.description}
 					onChange={handleChange}
-					className={`w-full px-3 py-2 border resize-none border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${
-						errors.description ? 'border-red-500' : ''
+					className={`form__textarea ${
+						errors.description ? 'form__input--error' : ''
 					}`}
 				></textarea>
 				{errors.description && (
-					<p className="text-red-500 text-sm">{errors.description}</p>
+					<p className="form__error-text">{errors.description}</p>
 				)}
 			</div>
-			<div className="m-4">
-				<label
-					htmlFor="category"
-					className="block text-sm font-medium text-gray-700 mb-2"
-				>
+			<div className="form__group">
+				<label htmlFor="category" className="form__label">
 					Categoría
 				</label>
 				<select
 					id="category"
 					value={formData.category}
 					onChange={handleChange}
-					className={`w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm ${
-						errors.category ? 'border-red-500' : ''
+					className={`form__select ${
+						errors.category ? 'form__input--error' : ''
 					}`}
 				>
 					{categories.map((category: Category) => (
@@ -81,20 +71,17 @@ const Form: React.FC<FormProps> = ({
 					))}
 				</select>
 				{errors.category && (
-					<p className="text-red-500 text-sm">{errors.category}</p>
+					<p className="form__error-text">{errors.category}</p>
 				)}
 			</div>
-			<div className="flex gap-4 bg-gray-100 rounded-b-lg p-4">
-				<button
-					type="submit"
-					className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
-				>
+			<div className="form__button-group">
+				<button type="submit" className="form__button form__button--submit">
 					Grabar
 				</button>
 				<button
 					type="button"
 					onClick={handleCancel}
-					className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600"
+					className="form__button form__button--cancel"
 				>
 					Cancelar
 				</button>

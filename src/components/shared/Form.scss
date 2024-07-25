@@ -1,0 +1,47 @@
+.form {
+	@apply p-6 bg-white rounded-lg shadow-md;
+
+	&__group {
+		@apply mb-4;
+	}
+
+	&__label {
+		@apply block text-sm font-medium text-gray-700 mb-2;
+	}
+
+	&__input {
+		@apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+	}
+
+	&__input--error {
+		@apply border-red-500;
+	}
+
+	&__textarea {
+		@apply w-full px-3 py-2 border resize-none border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+	}
+
+	&__select {
+		@apply w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm;
+	}
+
+	&__error-text {
+		@apply text-red-500 text-sm;
+	}
+
+	&__button-group {
+		@apply flex gap-4 bg-gray-100 rounded-b-lg p-4;
+	}
+
+	&__button {
+		@apply px-4 py-2 rounded;
+	}
+
+	&__button--submit {
+		@apply bg-blue-500 text-white hover:bg-blue-600;
+	}
+
+	&__button--cancel {
+		@apply bg-gray-500 text-white hover:bg-gray-600;
+	}
+}
