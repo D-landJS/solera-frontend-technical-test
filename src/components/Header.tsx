@@ -25,34 +25,38 @@ const Header = () => {
 	};
 
 	return (
-		<header className="bg-slate-300 text-black p-4 flex items-center">
-			<nav>
-				<button
-					className={getLinkClasses('Todos')}
-					onClick={() => handleFilterChange('Todos')}
-				>
-					Todos
-				</button>
-				<button
-					className={getLinkClasses('auto')}
-					onClick={() => handleFilterChange('auto')}
-				>
-					Auto
-				</button>
-				<button
-					className={getLinkClasses('health')}
-					onClick={() => handleFilterChange('health')}
-				>
-					Salud
-				</button>
-				<button
-					className={getLinkClasses('home')}
-					onClick={() => handleFilterChange('home')}
-				>
-					Hogar
-				</button>
-			</nav>
-		</header>
+		<>
+			<h2 className="text-5xl font-semibold mb-4 text-center">Servicios</h2>
+
+			<header className="bg-slate-300 text-black p-4 flex items-center">
+				<nav>
+					<button
+						className={getLinkClasses('Todos')}
+						onClick={() => handleFilterChange('Todos')}
+					>
+						Todos
+					</button>
+					<button
+						className={getLinkClasses('auto')}
+						onClick={() => handleFilterChange('auto')}
+					>
+						Auto
+					</button>
+					<button
+						className={getLinkClasses('health')}
+						onClick={() => handleFilterChange('health')}
+					>
+						Salud
+					</button>
+					<button
+						className={getLinkClasses('home')}
+						onClick={() => handleFilterChange('home')}
+					>
+						Hogar
+					</button>
+				</nav>
+			</header>
+		</>
 	);
 };
 
