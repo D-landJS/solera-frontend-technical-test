@@ -14,8 +14,8 @@
 
 ### Link alojado en Vercel.
 
-[technical-test]()
+[technical-test](https://solera-frontend-technical-test.vercel.app/)
 
 ### Link alojado en Netlify.
 
-[technical-test]()
+[technical-test](https://solera-frontend-technical-test.netlify.app/)
