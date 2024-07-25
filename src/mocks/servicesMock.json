@@ -1,0 +1,9 @@
+[
+	{
+		"id": "1",
+		"name": "Electricidad",
+		"description": "Servicio de electricidad."
+	},
+	{ "id": "2", "name": "Ambulancia", "description": "Servicio de ambulancia." },
+	{ "id": "3", "name": "Chofer", "description": "Servicio de chofer." }
+]
